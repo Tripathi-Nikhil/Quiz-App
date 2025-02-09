@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".Result">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/splash"/>
+    <TextView
+        android:id="@+id/correct"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correct Answers"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:padding="12dp"
+        android:background="#69F0AE"/>
+    <TextView
+        android:id="@+id/wrong"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wrong Answers"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:padding="12dp"
+        android:background="#FF5252"/>
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scored Marks"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:padding="12dp"
+        android:background="#FFFF00"/>
+
+    <RelativeLayout
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center">
+<com.mikhaellopez.circularprogressbar.CircularProgressBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/progress"
+    android:progress="0"
+    app:cpb_background_progressbar_color="#FF5252"
+    app:cpb_background_progressbar_width="10dp"
+    app:cpb_background_progressbar_color_direction="left_to_right"
+    app:cpb_progress_max="5"
+    app:cpb_progressbar_color="#69F0AE"
+    app:cpb_progressbar_width="10dp"
+    app:cpb_round_border="false"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/result"
+            android:layout_centerInParent="true"
+            android:text="5"
+            android:textSize="42dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/home"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFF00"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
