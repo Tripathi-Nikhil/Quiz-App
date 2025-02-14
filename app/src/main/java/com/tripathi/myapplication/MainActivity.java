@@ -3,6 +3,7 @@ package com.tripathi.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+import java.util.List;
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
 
@@ -27,41 +28,49 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toobar);
     }
 
+    public void startQuiz(String subject) {
+        DatabaseHelper db = new DatabaseHelper(this);
+        List<QuestionModel> questions = db.getQuestionsList(subject);
+
+        if (questions == null || questions.isEmpty()) {
+            Toast.makeText(this, "No questions available for " + subject, Toast.LENGTH_SHORT).show();
+            return; // Stay on MainActivity
+        }
+
+        Intent intent = new Intent(MainActivity.this, Question.class);
+        intent.putExtra("subject", subject);
+        startActivity(intent);
+    }
+
     public void cplus(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("C++");
     }
 
     public void clang(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("C");
     }
+
     public void js(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("JavaScript");
     }
+
     public void php(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("PHP");
     }
 
     public void python(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("Python");
     }
 
     public void terraform(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("Terraform");
     }
 
     public void kotlin(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("Kotlin");
     }
 
     public void swift(View view) {
-        startActivity(new Intent(MainActivity.this, Question.class));
-        finish();
+        startQuiz("Swift");
     }
 }

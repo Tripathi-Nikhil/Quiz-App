@@ -1,7 +1,5 @@
 package com.tripathi.myapplication;
 
-import static com.tripathi.myapplication.Question.marks;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -16,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 public class Result extends AppCompatActivity {
-    TextView correct, wrong, total;
+    TextView correct, wrong, total, subjectName;
     CircularProgressBar progress;
     TextView result;
     Button home;
@@ -37,23 +35,28 @@ public class Result extends AppCompatActivity {
         progress = findViewById(R.id.progress);
         result = findViewById(R.id.result);
         home = findViewById(R.id.home);
-        home.setOnClickListener(v -> {
-            Intent intent = new Intent(Result.this, MainActivity.class);
-            startActivity(intent);
-            finishAffinity();
-        });
+        subjectName = findViewById(R.id.subject_name); // Add a TextView in your XML for this
 
-        progress.setProgress(Question.correct);
+        // Get data from intent
         Intent intent = getIntent();
+        String subject = intent.getStringExtra("subject");
         int attempted = intent.getIntExtra("attempted", 0);
         int correct1 = intent.getIntExtra("correct", 0);
         int wrong1 = intent.getIntExtra("wrong", 0);
 
+        // Set data to UI elements
+        subjectName.setText("Subject: " + subject);
         correct.setText(String.valueOf(correct1));
         wrong.setText(String.valueOf(wrong1));
         total.setText(String.valueOf(attempted));
-        result.setText(correct1+"");
+        result.setText(correct1 + "");
+        progress.setProgress((float) correct1 / attempted * 100);
 
-
+        // Go back to home
+        home.setOnClickListener(v -> {
+            Intent homeIntent = new Intent(Result.this, MainActivity.class);
+            startActivity(homeIntent);
+            finishAffinity();
+        });
     }
 }
