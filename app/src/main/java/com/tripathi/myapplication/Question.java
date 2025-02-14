@@ -40,7 +40,6 @@ public class Question extends AppCompatActivity {
             return;
         }
 
-        // Initialize UI components
         answers = findViewById(R.id.answers);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
@@ -51,7 +50,6 @@ public class Question extends AppCompatActivity {
         score = findViewById(R.id.score);
         quit = findViewById(R.id.quit);
         nextbtn = findViewById(R.id.nextbtn);
-
         loadQuestion(index);
 
         nextbtn.setOnClickListener(v -> {
@@ -110,3 +108,4 @@ public class Question extends AppCompatActivity {
         }
     }
 }
+

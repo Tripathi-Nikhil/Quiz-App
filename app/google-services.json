@@ -1,29 +1,3 @@
-{
-  "project_info": {
-    "project_number": "739674949496",
-    "project_id": "quiz-app-fc945",
-    "storage_bucket": "quiz-app-fc945.firebasestorage.app"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:739674949496:android:b1fd54f4a71956c4536a8d",
-        "android_client_info": {
-          "package_name": "com.tripathi.myapplication"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDrPWff3sknnsMa54EBTDdJjRP47KQdvQI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    }
-  ],
-  "configuration_version": "1"
-}
+
+Secrets
+

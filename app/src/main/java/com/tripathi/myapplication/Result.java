@@ -29,8 +29,6 @@ public class Result extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        // Initialize UI elements
         correct = findViewById(R.id.correct);
         wrong = findViewById(R.id.wrong);
         total = findViewById(R.id.total);
